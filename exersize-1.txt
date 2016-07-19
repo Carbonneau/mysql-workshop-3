@@ -1,6 +1,6 @@
 Exercise 1
 
-create table account (
+create table Account (
   id INT AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(255),
   password VARCHAR(40),
@@ -8,7 +8,7 @@ create table account (
   modifiedOn DATETIME
 );
 
-create table addressBook (
+create table AddressBook (
     id INT AUTO_INCREMENT PRIMARY KEY,
     accountId INT,
     name VARCHAR(255),
@@ -16,7 +16,7 @@ create table addressBook (
     modifiedOn DATETIME
 );
 
-create table entry (
+create table Entry (
     id INT AUTO_INCREMENT PRIMARY KEY,
     addressBookId INT,
     firstName VARCHAR(255),
@@ -25,7 +25,7 @@ create table entry (
     type ENUM('phone', 'address', 'electronicMail')
 );
 
-create table phone (
+create table Phone (
     id INT AUTO_INCREMENT PRIMARY KEY,
     entryId INT,
     type ENUM('home', 'work', 'other'),
@@ -33,7 +33,7 @@ create table phone (
     content VARCHAR(255)
 );
 
-create table address (
+create table Address (
     id INT AUTO_INCREMENT PRIMARY KEY,
     entryId INT,
     type ENUM('home', 'work', 'other'),
@@ -45,7 +45,7 @@ create table address (
     postalCode VARCHAR(10)
 );
 
-create table electronicMail (
+create table ElectronicMail (
     id INT AUTO_INCREMENT PRIMARY KEY,
     entryId INT,
     type ENUM('home', 'work', 'other'),
